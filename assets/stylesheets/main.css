@@ -1,0 +1,674 @@
+@import url("circle.css");
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/*
+  ========================================
+  Custom styles
+  ========================================
+*/
+
+html {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  font: 400 18px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/*
+  ========================================
+  Header
+  ========================================
+*/
+header {
+  background-color: #038ACE;
+  color: white;
+}
+
+.header-intro {
+  display: flex;
+  background-color: #08A1DB;
+  height: 195px;
+  box-shadow: 0 7px 8px black;
+}
+
+.header-name {
+  padding-top: 75px;
+  letter-spacing: 1px;
+}
+
+.header-img {
+  position: absolute; /* not sure why relative doesn't work */
+  right: 200px;
+  width: 130px;
+  border-radius: 50%;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.header-intro .header-name {
+  margin-left: 200px;
+}
+
+.header-intro .header-img {
+  margin-right: 0;
+}
+
+/*
+  ========================================
+  Navigation
+  ========================================
+*/
+
+.container .nav-header {
+  padding: 15px 0;
+}
+
+.nav-header a  {
+  text-decoration: none;
+  color: #c0d9e5;
+}
+
+.nav-header a:hover {
+  color: white;
+  border-bottom: 2px solid white;
+  padding-bottom: 13px;
+}
+.nav-header .checked {
+  color: white;
+  border-bottom: 2px solid white;
+  padding-bottom: 13px;
+}
+
+/*
+  ========================================
+  Typography
+  ========================================
+*/
+h1 {
+  font-size: 36px;
+  line-height: 44px;
+}
+
+strong {
+  font-weight: 700;
+}
+
+/*
+  ========================================
+  Grid
+  ========================================
+*/
+.container {
+  margin: 0 200px;
+}
+
+.container-left-alt {
+  width: 100%;
+  margin-left: 200px;
+  margin-right: 0;
+
+}
+
+.col-1-3 {
+  width: 33.33%;
+}
+
+.col-2-3 {
+  width: 66.66%;
+}
+
+.col-1-3,
+.col-2-3,
+.col-1-3-alt,
+.col-2-3-alt {
+  display: inline-block;
+}
+
+.col-1-3-alt {
+  width: 20%;
+}
+
+.col-2-3-alt {
+  width: 80%;
+  z-index: -1;
+  position: relative;
+  vertical-align: bottom;
+}
+
+/*
+  ========================================
+  Clearfix
+  ========================================
+*/
+
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.clearfix {
+  clear: both;
+  *zoom: 1;
+}
+/*
+  ========================================
+  flex
+  ========================================
+*/
+
+.container-flexbox {
+  display: flex;
+}
+
+.item-left {
+  flex-basis: 30%;
+  padding: 30px 30px 0 200px;
+  z-index: -1;
+}
+
+.item-left-aside {
+  background-color: #F0F0F0;
+}
+
+.item-right {
+  flex-basis: 70%;
+  padding: 30px 200px 100px 30px;
+  box-shadow: -2px 0 5px #ccc;
+  z-index: -1;
+}
+
+.item-right-portfolio {
+  flex-basis: 120%;
+  padding: 0 0 0 30px;
+  position: relative;
+  z-index: -1;
+}
+
+.item-left-portfolio {
+  flex-basis: 30%;
+  padding: 30px 30px 0 200px;
+}
+
+.middle-image-portfolio {
+  flex-basis: 110%;
+  padding: 0;
+}
+
+.middle-text-portfolio {
+  flex-basis: 30%;
+  padding: 30px 200px 0 30px;
+}
+
+.item-resume-left {
+  flex-basis: 30%;
+  padding: 30px 30px 0 200px;
+  box-shadow: 5px 1.5px 5px #ccc;
+  z-index: 1;
+}
+.item-resume-right {
+  flex-basis: 70%;
+  padding: 30px 200px 100px 30px;
+  background-color: #F0F0F0;
+}
+
+.item-resume-left .h3-title:not(:first-of-type) {
+  padding-top: 15px;
+}
+
+/*
+  ========================================
+  Hello Page
+  ========================================
+*/
+
+.h3-title {
+  color: #08A1DB;
+  padding-bottom: 15px;
+  font-weight: 700;
+}
+
+.aside-section {
+  border-bottom: 1px solid #dbd9d9;
+  padding-bottom: 15px;
+}
+
+.aside-section:not(:first-of-type) {
+  padding-top: 15px;
+}
+
+/*.container2 {
+  float: left;
+  width: 100%;
+}
+
+.container1 {
+  float: left;
+  width: 100%;
+  background-color: #F0F0F0;
+  position: relative;
+  right: 70%;
+  box-shadow: 3px 0 8px grey;
+}
+
+.col1 {
+  box-sizing: border-box;
+  padding: 30px 30px 0 200px;
+  float: left;
+  width: 30%;
+  position: relative;
+  left: 70%;
+}
+
+.col2 {
+  box-sizing: border-box;
+  padding: 30px 200px 100px 30px;
+  float: left;
+  width: 70%;
+  position: relative;
+  left: 70%;
+}*/
+
+/*
+  ========================================
+  Portfolio Body
+  ========================================
+*/
+
+.project-description,
+.col-1-3 {
+  vertical-align: top;
+}
+
+.project1-image {
+  background: url("../../assets/images/pic1.jpg") 0 0 no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 400px;
+}
+
+.project2-image {
+  background: url("../../assets/images/pic2.jpg") 0 0 no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  width: 100%;
+  height: 400px;
+}
+
+.project3-image {
+  background: url("../../assets/images/pic3.jpg") 0 0 no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 400px;
+}
+
+.project-description {
+  line-height: 20px;
+  margin-left: 200px;
+}
+
+.project-description-middle {
+  line-height: 20px;
+  margin-right: 200px;
+}
+
+.project-description-left,
+.project-description-right {
+  box-sizing: border-box;
+  vertical-align: top;
+  padding-top: 40px;
+}
+
+.project-description-left {
+  padding-right: 30px;
+}
+
+.project-description-right {
+  padding-left: 30px;
+}
+
+.project-description-left h2,
+.project-description-right h2 {
+  padding-bottom: 10px;
+}
+
+/*
+  ========================================
+  Resume
+  ========================================
+*/
+
+.resume-lead-text {
+  background-color: #576268;
+  padding: 25px 200px 25px 200px;
+  z-index: -1;
+}
+
+.table-personal {
+  width: 92%;
+}
+
+.table-software {
+  width: 100%;
+}
+.item-resume-left table tbody tr th {
+  text-align: left;
+}
+
+.item-resume-left .table-personal tbody tr {
+  border-bottom: 1px solid #dbd9d9;
+}
+
+.item-resume-left .table-personal tbody tr th, td {
+  padding-bottom: 20px;
+  padding-right: 10px;
+}
+
+.item-resume-left .table-software tbody tr td {
+  padding-right: 30px;
+}
+
+.item-resume-left table tbody tr th:not(first-of-type) {
+  padding-top: 20px;
+}
+
+.skills-rightbar {
+  width: 250px;
+  height: 15px;
+  background-color: #CCCCCC;
+  border-radius: 1px;
+  text-align: right;
+}
+
+.skills-leftbar {
+  width: 99.3%;
+  height: 100%;
+  border-radius: 1px 0 0 1px;
+  background-color: #1389BB;
+}
+
+.skills-whitebar-indesign {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+}
+
+.skills-whitebar-illustrator {
+  width: 90%;
+  height: 100%;
+  background-color: #fff;
+}
+
+.skills-whitebar-photoshop {
+  width: 80%;
+  height: 100%;
+  background-color: #fff;
+}
+
+.skills-whitebar-sketch3 {
+  width: 70%;
+  height: 100%;
+  background-color: #fff;
+}
+
+.skills-whitebar-html5 {
+  width: 50%;
+  height: 100%;
+  background-color: #fff;
+}
+
+.skills-whitebar-css3 {
+  width: 40%;
+  height: 100%;
+  background-color: #fff;
+}
+
+/*------ Hobbies --------*/
+
+.hobbies-section {
+  display: flex;
+  flex-direction: column;
+  margin-left: -30px;
+  margin-bottom: 30px;
+}
+
+.hobbies-top-row,
+.hobbies-bottom-row {
+  display: flex;
+  justify-content: space-around;
+}
+
+.hobbies-bottom-row {
+  margin-top: 10px;
+}
+
+.hobbies-icon-field {
+  display: flex;
+  align-items: center;
+  flex-flow: column nowrap;
+}
+
+.hobbies-icon-box {
+  width: 85px;
+  height: 85px;
+  background-color: #038ACE;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*-------- Resume-right --------*/
+.item-resume-right table tbody tr td {
+  border-bottom: 1px solid #dbd9d9;
+  padding-top: 15px;
+}
+
+.item-resume-right table tbody tr td p {
+  margin-top: 10px;
+}
+
+.table-work {
+  margin-bottom: 40px;
+  display: flex;
+}
+
+.item-indicator-field-work,
+.item-indicator-field-edu {
+  display: flex;
+  margin-top: 15px;
+  margin-right: 20px;
+  flex-flow: column nowrap;
+}
+
+.item-indicator-field-work {
+  margin-bottom: 20px;
+}
+
+.item-indicator-box-top {
+  display: flex;
+  background-color: #038ACE;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+}
+
+.item-indicator-box-bottom {
+  display: flex;
+  align-self: center;
+  background-color: #038ACE;
+  width: 2px;
+  height: 24.5%;
+}
+
+.item-indicator-box-bottom-edu {
+  display: flex;
+  align-self: center;
+  background-color: #038ACE;
+  width: 2px;
+  height: 41%;
+}
+
+.pro-skills-field {
+  display: flex;
+  width: 100%;
+  height: 100px;
+  margin-bottom: 50px;
+}
+
+.pro-skills-title {
+  color: black;
+  font-weight: 700;
+}
+
+.table-education {
+  display: flex;
+}
+
+/*
+  ========================================
+  Footer
+  ========================================
+*/
+
+footer {
+  margin-top: auto;
+  background-color: #08A1DB;
+  color: white;
+  z-index: 1;
+}
+
+.container-footer {
+  display: flex;
+}
+
+.icon-field:first-of-type {
+  margin-left: 200px;
+}
+
+.icon-field:last-of-type {
+  margin-right: 200px;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+}
+
+.icon-field {
+  display: flex;
+  height: 150px;
+  width: 33.33%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon-box {
+  width: 75px;
+  height: 75px;
+  background-color: #038ACE;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.item-behance {
+  flex-basis: 33.33%;
+  align-items: center;
+}
+
+.item-linkedin {
+  flex-basis: 33.33%;
+}
+
+.item-twitter {
+  flex-basis: 33.33%;
+}
+
+.link-footer {
+  text-align: left;
+}
+
+.extraInfo-footer {
+  display: flex;
+  background-color: #038ACE;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px 200px 20px 200px;
+}
+
+.extraInfo-footer p {
+  flex-basis: 80%;
+}
+
+.extraInfo-footer h4 {
+  flex-basis: 20%;
+}
+
+.extraInfo-footer p,
+.extraInfo-footer h4 {
+  display: inline-block;
+}
+
+.extraInfo-footer h4 {
+  text-align: right;
+}
